@@ -204,7 +204,7 @@
     var webSocketConnection = Object.create({
         init: function () {
             var self = this;
-            this.connection = new WebSocket(window.location.href.replace('http', 'ws'));
+            this.connection = new WebSocket(window.location.href.replace('http', 'ws').replace('https', 'wss')+'ws');
             this.connection.onopen = function () {
                 self.connection.send(history);
             };
